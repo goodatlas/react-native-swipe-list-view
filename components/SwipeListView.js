@@ -154,6 +154,9 @@ class SwipeListView extends PureComponent {
     closeAllOpenRows() {
         Object.keys(this._rows).forEach(rowKey => {
             const row = this._rows[rowKey];
+            if (!row) {
+                return;
+            }
             const rowTranslateX = Math.round(row.currentTranslateX || 0);
             if (row.closeRow && rowTranslateX !== 0) {
                 row.closeRow();
@@ -163,6 +166,9 @@ class SwipeListView extends PureComponent {
     closeAllOpenRowsWithoutAnimation() {
         Object.keys(this._rows).forEach(rowKey => {
             const row = this._rows[rowKey];
+            if (!row) {
+                return;
+            }
             const rowTranslateX = Math.round(row.currentTranslateX || 0);
             if (row.closeRow && rowTranslateX !== 0) {
                 row.closeRowWithoutAnimation();
