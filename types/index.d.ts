@@ -502,5 +502,6 @@ interface IUseFlatListProps<T> extends FlatListPropsOverride<T>, IPropsSwipeList
 
 export class SwipeListView<T> extends Component<Partial<IUseSectionListProps<T>> | Partial<IUseFlatListProps<T>>> {
 	closeAllOpenRows: () => void;
+	closeAllOpenRowsWithoutAnimation: () => void;
 	render(): JSX.Element;
 }
